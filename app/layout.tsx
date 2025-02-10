@@ -3,9 +3,8 @@ import { Inter, Quicksand } from "next/font/google"; //
 import type React from "react";
 import { Fira_Code } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"] });
-const quicksand = Quicksand({weight: "300", display: "swap"})
-const fira_code = Fira_Code({weight: "300"})
+
+const fira_code = Fira_Code({preload:true, subsets: ['latin']})
 
 export const metadata = {
   title: "Octavio Duarte",
