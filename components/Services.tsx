@@ -8,48 +8,46 @@ const Services = () => {
       <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-between items-start mb-8 sm:mb-16 gap-6 sm:gap-0">
             <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold">
-              MY SERVICE
-              <br />
-              EXPERTISE
+              MIS SERVICIOS
             </h2>
             <div className="max-w-md">
               <p className="text-gray-400 mb-4">
-                Leveraging cutting-edge technologies and years of experience to deliver exceptional results across web
-                design, development, and branding.
+                Aprovechando tecnologías de vanguardia y años de experiencia para ofrecer resultados excepcionales en diseño web,
+                desarrollo y branding.
               </p>
               <Link
                 href="#contact"
                 className="inline-flex items-center gap-2 border border-white px-4 sm:px-6 py-2 sm:py-3 hover:bg-white hover:text-black transition-colors"
               >
-                Start a project <ArrowRight className="w-4 h-4" />
+                Iniciar un proyecto <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 py-8 sm:py-12 border-t border-gray-800">
             {[
               {
                 number: "01",
-                title: "WEB DESIGN",
+                title: "DISEÑO WEB",
                 descriptions: [
-                  "Creating intuitive user interfaces that enhance interaction.",
-                  "Focusing on user needs to deliver exceptional experiences.",
+                  "Creando interfaces de usuario intuitivas que mejoran la interacción.",
+                  "Enfocándome en las necesidades del usuario para ofrecer experiencias excepcionales.",
                 ],
               },
               {
                 number: "02",
-                title: "WEB DEVELOPMENT",
+                title: "DESARROLLO WEB",
                 descriptions: [
-                  "Building scalable and maintainable web applications.",
-                  "Utilizing modern frameworks like React, Next.js, and Django.",
+                  "Construyendo aplicaciones web escalables y mantenibles.",
+                  "Utilizando frameworks modernos como React, Next.js y Django.",
                 ],
               },
               {
                 number: "03",
                 title: "BRANDING",
                 descriptions: [
-                  "Crafting unique visual identities that stand out.",
-                  "Implementing consistent branding across digital platforms.",
+                  "Creando identidades visuales únicas que destacan.",
+                  "Implementando una identidad de marca consistente en plataformas digitales.",
                 ],
               },
             ].map((service, index) => (

@@ -30,12 +30,12 @@ export default function Experience() {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-      <h2 className="text-4xl mb-2 sm:text-6xl md:text-8xl font-bold text-start md:mb-6">EXPERIENCIA</h2>
-        <div className="relative">
+      <h2 className="text-4xl  sm:text-6xl md:text-8xl font-bold text-start  mb-8 sm:mb-16">EXPERIENCIA</h2>
+        <div className="relative py-8 sm:py-12 border-t border-gray-800">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.period}
-              className=" mb-8 flex"
+              className=" mb-8 flex "
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}

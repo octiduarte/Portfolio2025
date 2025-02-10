@@ -6,7 +6,7 @@ const fira_code = Fira_Code({preload: true, subsets: ['latin']})
 
 export const metadata = {
   title: "Octavio Duarte",
-  description: "Un resumen de lo que soy y mis",
+  description: "Un resumen de lo que soy y mas",
 }
 
 export default function RootLayout({

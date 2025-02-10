@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Twitter, ChevronDown } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  Instagram,
+  ChevronDown,
+  ArrowRight,
+} from "lucide-react";
 import { Fira_Code } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -94,31 +102,35 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <Link href="https://github.com" target="_blank">
+          <Link href="https://github.com/octiduarte" target="_blank">
             <Button variant="outline" size="icon">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://linkedin.com" target="_blank">
+          <Link
+            href="https://www.linkedin.com/in/octavio-duarte-19a695237/"
+            target="_blank"
+          >
             <Button variant="outline" size="icon">
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>
             </Button>
           </Link>
-          <Link href="https://twitter.com" target="_blank">
+          <Link href="https://www.instagram.com/_octavioduarte" target="_blank">
             <Button variant="outline" size="icon">
-              <Twitter className="h-4 w-4" />
-              <span className="sr-only">Twitter</span>
+              <Instagram className="h-4 w-4" />
+              <span className="sr-only">Instagram</span>
             </Button>
           </Link>
-          <Link href="mailto:hello@example.com">
+          <Link href="mailto:octaviomartinduarte@gmail.com">
             <Button variant="outline" size="icon">
               <Mail className="h-4 w-4" />
               <span className="sr-only">Email</span>
             </Button>
           </Link>
         </motion.div>
+       
         <motion.div
           className="mt-8 justify-items-center"
           initial={{ opacity: 0, y: -20 }}

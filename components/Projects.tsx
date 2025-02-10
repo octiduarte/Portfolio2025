@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function FeaturedWorkSection() {
   return (
@@ -15,7 +15,7 @@ export default function FeaturedWorkSection() {
             </h2>
             <div className="text-center">
               <Link
-                href="#contact"
+                href="https://wa.me/5491133722655"
                 className="inline-flex items-center gap-2 border border-white px-4 sm:px-6 py-2 sm:py-3 hover:bg-white hover:text-black transition-colors"
               >
                 Contactame <ArrowRight className="w-4 h-4" />
@@ -28,26 +28,26 @@ export default function FeaturedWorkSection() {
             {
               title: "MI PRIMER PORTAFOLIO",
               number: "01",
-              description: "Realice mi primer portafolio 100% hecho a mano solamente utilizando HTML, CSS Y JAVASCRIPT",
-              link:"",
-              image:
-                "",
+              description:
+                "Realice mi primer portafolio 100% hecho a mano solamente utilizando HTML, CSS Y JAVASCRIPT",
+              link: "https://octiduarte.github.io/Portafolio.github.io/",
+              image: "/PrimerCV.png",
             },
             {
               title: "WEB DEVELOPMENT",
               number: "02",
-              description: "Building scalable, high-performance websites and applications",
-              link:"",
-              image:
-                "",
+              description:
+                "Building scalable, high-performance websites and applications",
+              link: "",
+              image: "",
             },
             {
               title: "BRANDING",
               number: "03",
-              description: "Crafting unique brand identities that resonate with your audience",
-              link:"",
-              image:
-                "",
+              description:
+                "Crafting unique brand identities that resonate with your audience",
+              link: "",
+              image: "",
             },
           ].map((category, index) => (
             <div
@@ -56,8 +56,12 @@ export default function FeaturedWorkSection() {
             >
               <div className="space-y-4 mb-4 sm:mb-0">
                 <div className="flex items-baseline gap-4">
-                  <h3 className="text-2xl sm:text-4xl font-bold">{category.title}</h3>
-                  <span className="text-sm text-gray-400">({category.number})</span>
+                  <h3 className="text-2xl sm:text-4xl font-bold">
+                    {category.title}
+                  </h3>
+                  <span className="text-sm text-gray-400">
+                    ({category.number})
+                  </span>
                 </div>
                 <p className="text-gray-400">{category.description}</p>
               </div>
@@ -67,11 +71,14 @@ export default function FeaturedWorkSection() {
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
                     fill
-                    className="object-cover"
+                    className="object-cover "
                   />
                 </div>
-                <Link href={`category.link`} className="inline-flex items-center gap-2 hover:text-gray-300">
-                  View projects <ArrowRight className="w-4 h-4" />
+                <Link
+                  href={category.link}
+                  className="inline-flex items-center gap-2 hover:text-gray-300"
+                >
+                  Visitar Proyecto <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -79,6 +86,5 @@ export default function FeaturedWorkSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
