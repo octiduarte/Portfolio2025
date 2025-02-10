@@ -26,9 +26,10 @@ export default function FeaturedWorkSection() {
           {/* Project Categories */}
           {[
             {
-              title: "WEB DESIGN",
+              title: "MI PRIMER PORTAFOLIO",
               number: "01",
-              description: "Creating engaging digital experiences that captivate and convert",
+              description: "Realice mi primer portafolio 100% hecho a mano solamente utilizando HTML, CSS Y JAVASCRIPT",
+              link:"",
               image:
                 "",
             },
@@ -36,6 +37,7 @@ export default function FeaturedWorkSection() {
               title: "WEB DEVELOPMENT",
               number: "02",
               description: "Building scalable, high-performance websites and applications",
+              link:"",
               image:
                 "",
             },
@@ -43,6 +45,7 @@ export default function FeaturedWorkSection() {
               title: "BRANDING",
               number: "03",
               description: "Crafting unique brand identities that resonate with your audience",
+              link:"",
               image:
                 "",
             },
@@ -67,7 +70,7 @@ export default function FeaturedWorkSection() {
                     className="object-cover"
                   />
                 </div>
-                <Link href="#" className="inline-flex items-center gap-2 hover:text-gray-300">
+                <Link href={`category.link`} className="inline-flex items-center gap-2 hover:text-gray-300">
                   View projects <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

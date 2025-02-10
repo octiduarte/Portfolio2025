@@ -1,38 +1,54 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
-import { Fira_Code } from "next/font/google"
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Github, Linkedin, Mail, Twitter, ChevronDown } from "lucide-react";
+import { Fira_Code } from "next/font/google";
+import Link from "next/link";
+import { Button } from "./ui/button";
 
-const firaCode = Fira_Code({ subsets: ["latin"] })
+const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export default function Hero() {
-  const [text, setText] = useState("")
+  const [text, setText] = useState("");
   const fullText =
-    "const developer = {\n  nombre: 'Octavio Duarte',\n  skills: ['JavaScript', 'React', 'Nextjs'],\n  pasion: 'Crear las mejores paginas webs'\n};"
+    "const developer = {\n  nombre: 'Octavio Duarte',\n  skills: ['JavaScript', 'React', 'Nextjs'],\n  pasion: 'Crear las mejores paginas webs'\n};";
+
+  const [positions, setPositions] = useState<{ x: number; y: number }[]>([]);
 
   useEffect(() => {
-    let i = 0
+    let i = 0;
     const typingEffect = setInterval(() => {
       if (i < fullText.length) {
-        setText(fullText.slice(0, i + 1))
-        i++
+        setText(fullText.slice(0, i + 1));
+        i++;
       } else {
-        clearInterval(typingEffect)
+        clearInterval(typingEffect);
       }
-    }, 50)
+    }, 50);
 
-    return () => clearInterval(typingEffect)
-  }, [])
+    return () => clearInterval(typingEffect);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setPositions(
+        [...Array(20)].map(() => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+        }))
+      );
+    }
+  }, []);
 
   return (
-    <section className=" h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 opacity-25">
-        {[...Array(20)].map((_, i) => (
+        {positions.map((pos, i) => (
           <motion.div
             key={i}
-            className="absolute text-green-500 whitespace-nowrap"
-            initial={{ y: -100, x: Math.random() * window.innerWidth }}
+            className="absolute text-zinc-100 whitespace-nowrap"
+            initial={{ y: -100, x: pos.x }}
             animate={{
               y: window.innerHeight + 100,
               transition: {
@@ -52,26 +68,78 @@ export default function Hero() {
       </div>
       <div className="z-10 text-center">
         <motion.h1
-          className={`text-4xl sm:text-6xl md:text-8xl font-bold ${firaCode.className}`}
+          className={`text-5xl sm:text-6xl md:text-8xl font-bold ${firaCode.className} flex flex-col sm:flex-row sm:space-x-4 sm:items-center sm:justify-center`}
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          TRAINEE DEVELOPER
+          <span>TRAINEE</span>
+          <span>DEVELOPER</span>
         </motion.h1>
         <motion.div
-          className="bg-zinc-800   p-4 rounded-lg shadow-lg"
+          className="bg-zinc-800 p-4 rounded-lg shadow-lg"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <pre className={`text-left text-xs md:text-base ${firaCode.className}`}>
+          <pre
+            className={`text-left text-xs md:text-base ${firaCode.className}`}
+          >
             <code>{text}</code>
           </pre>
         </motion.div>
+        <motion.div
+          className="my-3 space-x-4"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <Link href="https://github.com" target="_blank">
+            <Button variant="outline" size="icon">
+              <Github className="h-4 w-4" />
+              <span className="sr-only">GitHub</span>
+            </Button>
+          </Link>
+          <Link href="https://linkedin.com" target="_blank">
+            <Button variant="outline" size="icon">
+              <Linkedin className="h-4 w-4" />
+              <span className="sr-only">LinkedIn</span>
+            </Button>
+          </Link>
+          <Link href="https://twitter.com" target="_blank">
+            <Button variant="outline" size="icon">
+              <Twitter className="h-4 w-4" />
+              <span className="sr-only">Twitter</span>
+            </Button>
+          </Link>
+          <Link href="mailto:hello@example.com">
+            <Button variant="outline" size="icon">
+              <Mail className="h-4 w-4" />
+              <span className="sr-only">Email</span>
+            </Button>
+          </Link>
+        </motion.div>
+        <motion.div
+          className="mt-8 justify-items-center"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+              transition: {
+                duration: 1.5,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              },
+            }}
+          >
+            <ChevronDown className="h-8 w-8  text-zinc-400" />
+          </motion.div>
+        </motion.div>
       </div>
-      
     </section>
-  )
+  );
 }
-

@@ -1,54 +1,61 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import type React from "react" // Added import for React
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formState)
-  }
+    e.preventDefault();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    })
-  }
+    emailjs
+      .send(
+        "service_pove626", // Reemplaza con tu Service ID
+        "template_t1e7emr", // Reemplaza con tu Template ID
+        {
+          from_name: formState.name,
+          from_email: formState.email,
+          message: formState.message,
+        },
+        "jkoHblwbLAFqpREXY" // Reemplaza con tu Public Key de EmailJS
+      )
+      .then(
+        () => {
+          alert("Mensaje enviado con éxito");
+          setFormState({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.error("Error al enviar el mensaje:", error);
+        }
+      );
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
 
   return (
     <section className="py-20 px-4 md:px-8">
-      <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-8 text-center"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Get in Touch
+      <motion.h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+        CONTACTAME
       </motion.h2>
-      <motion.form
-        className="max-w-md mx-auto"
-        onSubmit={handleSubmit}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
+      <motion.form className="max-w-md mx-auto" onSubmit={handleSubmit}>
         <div className="mb-4">
           <Input
             type="text"
             name="name"
-            placeholder="Your Name"
+            placeholder="Tu Nombre"
             value={formState.name}
             onChange={handleChange}
             required
@@ -58,7 +65,7 @@ export default function Contact() {
           <Input
             type="email"
             name="email"
-            placeholder="Your Email"
+            placeholder="Tu Email"
             value={formState.email}
             onChange={handleChange}
             required
@@ -67,17 +74,16 @@ export default function Contact() {
         <div className="mb-4">
           <Textarea
             name="message"
-            placeholder="Your Message"
+            placeholder="Tu Mensaje"
             value={formState.message}
             onChange={handleChange}
             required
           />
         </div>
-        <Button type="submit" className="w-full">
-          Send Message
+        <Button type="submit" className="w-full inline-flex items-center gap-2 border border-white px-4 sm:px-6 py-2 sm:py-3 hover:bg-white hover:text-black transition-colors">
+          Enviar Mensaje
         </Button>
       </motion.form>
     </section>
-  )
+  );
 }
-
