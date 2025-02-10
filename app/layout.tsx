@@ -1,5 +1,4 @@
 import "./globals.css";
-import { Inter, Quicksand } from "next/font/google"; // 
 import type React from "react";
 import { Fira_Code } from "next/font/google"
 
