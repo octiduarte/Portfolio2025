@@ -2,17 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Twitter,
-  Instagram,
-  ChevronDown,
-  ArrowRight,
-} from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
 export default function About() {
   return (
     <section className=" bg-zinc-900 py-20 px-4 md:px-8">
