@@ -3,26 +3,45 @@ import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [cursorType, setCursorType] = useState("normal");
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
+
+    const handleMouseEnter = () => setCursorType("pointer");
+    const handleMouseLeave = () => setCursorType("normal");
+
     window.addEventListener("mousemove", moveCursor);
-    return () => window.removeEventListener("mousemove", moveCursor);
+
+    document.querySelectorAll("button, a").forEach((el) => {
+      el.addEventListener("mouseenter", handleMouseEnter);
+      el.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      document.querySelectorAll("button, a").forEach((el) => {
+        el.removeEventListener("mouseenter", handleMouseEnter);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+      });
+    };
   }, []);
 
   return (
     <div
       style={{
         position: "fixed",
-        top: position.y,
-        left: position.x,
+        top: position.y + 5, // Ajusta ligeramente hacia abajo
+        left: position.x + 5, // Ajusta ligeramente hacia la derecha
         width: "19px",
         height: "19px",
-        background: "url('/cursor6.png') center/cover no-repeat",
+        background: cursorType === "normal"
+          ? "url('/cursor-nuevo.png') center/cover no-repeat"
+          : "url('/cursor-pointer.png') center/cover no-repeat",
         pointerEvents: "none",
-        transform: "translate(-50%, -50%)",
+        transform: "translate(0%, 0%)", // Elimina el centrado del cursor
         zIndex: 9999,
       }}
     />

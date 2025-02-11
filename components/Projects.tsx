@@ -71,14 +71,14 @@ export default function FeaturedWorkSection() {
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
                     fill
-                    className="object-cover "
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
                   />
                 </div>
                 <Link
                   href={category.link}
                   className="inline-flex items-center gap-2 hover:text-gray-300"
-                >
-                  Visitar Proyecto <ArrowRight className="w-4 h-4" />
+                >Visitar Proyecto<ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
