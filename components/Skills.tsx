@@ -17,7 +17,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="py-20 px-4 md:px-8 bg-zinc-950">
+    <section className="py-20 px-4 md:px-8 bg-zinc-900">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl sm:text-6xl md:text-8xl font-bold pb-3"

@@ -1,6 +1,7 @@
 import "./globals.css";
 import type React from "react";
 import { Fira_Code } from "next/font/google"
+import CustomCursor from "@/components/CustomCursor";
 
 const fira_code = Fira_Code({preload: true, subsets: ['latin']})
 
@@ -16,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={fira_code.className}>{children}</body>
+      <body className={fira_code.className}>
+      <CustomCursor />{children}</body>
     </html>
   )
 }

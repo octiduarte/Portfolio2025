@@ -15,7 +15,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 export default function About() {
   return (
-    <section className=" bg-zinc-950 py-20 px-4 md:px-8">
+    <section className=" bg-zinc-900 py-20 px-4 md:px-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-start sm:flex-row justify-between sm:items-center mb-8 sm:mb-16 gap-6 sm:gap-0">
           <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold">

@@ -8,6 +8,15 @@
   --background-end-rgb: 0, 0, 0;
 }
 
+
+html, body {
+  cursor: none !important;
+}
+
+button, a {
+  cursor: none !important;  /* Evita que se cambie a la mano */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)));
