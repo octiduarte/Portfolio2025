@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Instagram,
-  ChevronDown,
-} from "lucide-react";
+import { Github, Linkedin, Mail, Instagram, ChevronDown } from "lucide-react";
 import { Fira_Code } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
@@ -128,9 +122,9 @@ export default function Hero() {
             </Button>
           </Link>
         </motion.div>
-       
+
         <motion.div
-          className="mt-8 justify-items-center"
+          className="mt-8 flex justify-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
@@ -146,7 +140,7 @@ export default function Hero() {
               },
             }}
           >
-            <ChevronDown className="h-8 w-8  text-zinc-400" />
+            <ChevronDown className="h-8 w-8 text-zinc-400" />
           </motion.div>
         </motion.div>
       </div>
