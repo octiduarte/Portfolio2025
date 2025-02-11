@@ -6,10 +6,8 @@ import {
   Github,
   Linkedin,
   Mail,
-  Twitter,
   Instagram,
   ChevronDown,
-  ArrowRight,
 } from "lucide-react";
 import { Fira_Code } from "next/font/google";
 import Link from "next/link";
