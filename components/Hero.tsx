@@ -6,6 +6,7 @@ import { Github, Linkedin, Mail, Instagram, ChevronDown } from "lucide-react";
 import { Fira_Code } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { BsWhatsapp } from "react-icons/bs";
 
 const firaCode = Fira_Code({ subsets: ["latin"] });
 
@@ -109,10 +110,10 @@ export default function Hero() {
               <span className="sr-only">LinkedIn</span>
             </Button>
           </Link>
-          <Link href="https://www.instagram.com/_octavioduarte" target="_blank">
+          <Link href="https://wa.me/5491133722655" target="_blank">
             <Button variant="outline" size="icon">
-              <Instagram className="h-4 w-4" />
-              <span className="sr-only">Instagram</span>
+              <BsWhatsapp className="h-4 w-4" />
+              <span className="sr-only">Whatsapp</span>
             </Button>
           </Link>
           <Link href="mailto:octaviomartinduarte@gmail.com">
