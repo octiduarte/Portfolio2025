@@ -29,17 +29,19 @@ export default function FeaturedWorkSection() {
               title: "MI PRIMER PORTAFOLIO",
               number: "01",
               description:
-                "Realice mi primer portafolio 100% hecho a mano solamente utilizando HTML, CSS Y JAVASCRIPT",
+                "Mi primer portafolio web, diseñado desde cero con un enfoque limpio y minimalista.",
               link: "https://octiduarte.github.io/Portafolio.github.io/",
               image: "/PrimerCV.png",
+              technologies: ["HTML", "CSS", "JavaScript"],
             },
             {
-              title: "WEB DEVELOPMENT",
+              title: "ECOMMERCE EN DESARROLLO",
               number: "02",
               description:
-                "Building scalable, high-performance websites and applications",
-              link: "",
-              image: "",
+                "Diseñando una experiencia de compra intuitiva y eficiente, enfocada en usabilidad y rendimiento.",
+              link: "https://proyecto-ecommerce-nine.vercel.app",
+              image: "/Ecommerce.png",
+              technologies: ["Nextjs", "Go", "Typescript"],
             },
             {
               title: "BRANDING",
@@ -48,6 +50,7 @@ export default function FeaturedWorkSection() {
                 "Crafting unique brand identities that resonate with your audience",
               link: "",
               image: "",
+              technologies: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
             },
           ].map((category, index) => (
             <div
@@ -64,6 +67,13 @@ export default function FeaturedWorkSection() {
                   </span>
                 </div>
                 <p className="text-gray-400">{category.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {category.technologies.map((tech, techIndex) => (
+                    <span key={techIndex} className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
               <div className="flex items-center gap-4 sm:gap-8">
                 <div className="hidden md:block relative w-48 h-32 bg-gray-900">
