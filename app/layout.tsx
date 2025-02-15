@@ -20,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fira_code.className}>
-      <CustomCursor />{children}</body>
+      <CustomCursor />{children}
+      <Analytics /></body>
     </html>
   )
 }
