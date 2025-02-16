@@ -18,16 +18,25 @@ export default function FeaturedWorkSection() {
                 href="https://wa.me/5491133722655"
                 className="inline-flex items-center gap-2 border border-white px-4 sm:px-6 py-2 sm:py-3 hover:bg-white hover:text-black transition-colors"
               >
-                Contactame <ArrowRight className="w-4 h-4" />
+                Contactame 
               </Link>
             </div>
           </div>
 
           {/* Project Categories */}
-          {[
+          {[  
+            {
+              title: "ECOMMERCE",
+              number: "01",
+              description:
+                "Ecommerce 100% funcional con funcionalidades operativas y una experiencia de compra sencilla.",
+              link: "https://proyectoparadigmas3.onrender.com",
+              image: "/proyecto_paradigmas.png",
+              technologies: ["HTML", "Javascript", "CSS", "PHP"],
+            },
             {
               title: "MI PRIMER PORTAFOLIO",
-              number: "01",
+              number: "02",
               description:
                 "Mi primer portafolio web, diseñado desde cero con un enfoque limpio y minimalista.",
               link: "https://octiduarte.github.io/Portafolio.github.io/",
@@ -36,21 +45,12 @@ export default function FeaturedWorkSection() {
             },
             {
               title: "ECOMMERCE EN DESARROLLO",
-              number: "02",
+              number: "03",
               description:
                 "Diseñando una experiencia de compra intuitiva y eficiente, enfocada en usabilidad y rendimiento.",
               link: "https://proyecto-ecommerce-nine.vercel.app",
               image: "/Ecommerce.png",
               technologies: ["Nextjs", "Go", "Typescript"],
-            },
-            {
-              title: "BRANDING",
-              number: "03",
-              description:
-                "Crafting unique brand identities that resonate with your audience",
-              link: "",
-              image: "",
-              technologies: ["Figma", "Adobe Illustrator", "Adobe Photoshop"],
             },
           ].map((category, index) => (
             <div
@@ -76,9 +76,9 @@ export default function FeaturedWorkSection() {
                 </div>
               </div>
               <div className="flex items-center gap-4 sm:gap-8">
-                <div className="hidden md:block relative w-48 h-32 bg-gray-900">
+                <div className="hidden md:block relative w-48 h-32 bg-gray-900 rounded-sm overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
                   <Image
-                    src={category.image || "/placeholder.svg"}
+                    src={category.image}
                     alt={category.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -88,7 +88,8 @@ export default function FeaturedWorkSection() {
                 <Link
                   href={category.link}
                   className="inline-flex items-center gap-2 hover:text-gray-300"
-                >Visitar Proyecto<ArrowRight className="w-4 h-4" />
+                >
+                  Visitar Proyecto <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

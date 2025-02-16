@@ -29,7 +29,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="/FotoPortfolio2.png"
+              src="/FotoPortfolio.jpeg"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               alt="Descripción de la imagen"

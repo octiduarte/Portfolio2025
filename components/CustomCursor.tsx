@@ -33,15 +33,15 @@ export default function CustomCursor() {
     <div
       style={{
         position: "fixed",
-        top: position.y + 5, // Ajusta ligeramente hacia abajo
-        left: position.x + 5, // Ajusta ligeramente hacia la derecha
+        top: position.y + 5, 
+        left: position.x + 5, 
         width: "19px",
         height: "19px",
         background: cursorType === "normal"
           ? "url('/cursor-nuevo.png') center/cover no-repeat"
           : "url('/cursor-pointer.png') center/cover no-repeat",
         pointerEvents: "none",
-        transform: "translate(0%, 0%)", // Elimina el centrado del cursor
+        transform: "translate(0%, 0%)",
         zIndex: 9999,
       }}
     />
