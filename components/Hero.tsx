@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Instagram, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { Fira_Code } from "next/font/google";
 import Link from "next/link";
 import { Button } from "./ui/button";
