@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 export default function About() {
@@ -16,7 +17,7 @@ export default function About() {
               href="/Octavio Duarte CV.pdf"
               className="inline-flex items-center gap-2 border border-white px-4 sm:px-6 py-2 sm:py-3 hover:bg-white hover:text-black transition-colors"
             >
-              MI CURRICULUM
+              MI CURRICULUM <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -42,19 +43,10 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <p className="text-sm  mb-4">
-              Mi nombre es Octavio. Tengo 26 años y actualmente estoy estudiando
-              mi quinto y último año de la carrera de Ingeniería en Sistemas de
-              Información en la facultad Cuenca del Plata en la ciudad de
-              Posadas Misiones, Argentina. Anteriormente estuve estudiando en la
-              facultad UTN en Buenos Aires la misma carrera hasta segundo año,
-              pero tuve que volver a Misiones por razones personales.
+            Soy Octavio, ingeniero en sistemas de información en formación, actualmente cursando el último año de mi carrera en la Universidad de la Cuenca del Plata, en Posadas, Misiones, Argentina.
             </p>
             <p className="text-sm mb-4">
-              Tengo facilidad para el trabajo en equipo ya que en mi actual
-              trabajo se necesita dicha aptitud todo el tiempo para llevar a
-              cabo los objetivos. Actualmente en el tiempo libre que tengo
-              realizo cursos sobre lenguajes que me puedan servir a futuro, como
-              Nextjs, Javascript, e Ingles en el mundo IT, etc.
+            Cuento con una sólida capacidad para el trabajo en equipo, adquirida tanto en mi formación académica como en mi experiencia laboral. Me especializo en el desarrollo de software y me mantengo en constante actualización a través de cursos y certificaciones en tecnologías como Next.js, react y el idioma inglés aplicado al ámbito IT.
             </p>
           </motion.div>
         </div>

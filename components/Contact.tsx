@@ -48,7 +48,7 @@ export default function Contact() {
   return (
     <section className="py-20 px-4 md:px-8">
       <motion.h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-        CONTACTAME
+        CONTACTAME 
       </motion.h2>
       <motion.form className="max-w-md mx-auto" onSubmit={handleSubmit}>
         <div className="mb-4">

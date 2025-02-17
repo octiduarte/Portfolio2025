@@ -18,7 +18,7 @@ export default function FeaturedWorkSection() {
                 href="https://wa.me/5491133722655"
                 className="inline-flex items-center gap-2 border border-white px-4 sm:px-6 py-2 sm:py-3 hover:bg-white hover:text-black transition-colors"
               >
-                Contactame 
+                Contactame <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
